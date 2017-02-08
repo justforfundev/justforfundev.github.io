@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <title>En Marche ! Mon programme</title>
+    <meta name="description" content="Pour ceux qui sont convaincus que le pays est bloqué, qui ont le goût du travail, du progrès, du risque, qui vivent pour la liberté, légalité, et lEurope."/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1100, initial-scale=1">
+    <meta property="og:image" content="logo-share.jpg"/>
+    <style>
+        @font-face 
+        {
+            font-family: gillsans_light;
+            src: url(gillsans-light-webfont.woff2);
+        }
+        body
+        {
+            font-family: gillsans_light,Helvetica Neue,Arial,sans-serif;
+            font-weight: 300;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: .14em;
+            color: #414141;
+            font-size: 16px;
+        }
+        ul
+        {
+            width:90%;
+            text-align: center;
+        }
+        li
+        {
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            margin: 20px;
+            color: #414141;
+            font-size: 17px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        A
+        {
+            color: #414141;
+            text-decoration: none;
+        }
+    </style>
+    
+    <script src="jquery-3.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+	
+        var step = 0;
+
+        var phrases = [
+            "l'intégration sociale au profit de la vie associative des quartiers se trouve déjà à l'étape avancée d'un réaménagement dans lequel quiconque pourra en définitive reconquérir sa distinction.",
+            "la dynamique vertueuse prend la direction conditionnelle d'une valorisation plus généreuse des moins aisés.",
+            "la puissante divergence locale doit parvenir à la comptabilisation mensuelle d'une France forte, riche et attractive.",
+            "l'exceptionnelle diversité culturelle justifie la démarche vertueuse d'une rupture sans agitation partisane pour retrouver le chemin du vivre ensemble.",
+            "la nécessité de répondre à votre inquiétude journalière, que vous soyez jeunes ou âgés, doit décider de l'avenir d'au moins deux générations compte tenu de la lourdeur d'un processus allant vers plus d'égalité.",
+            "la sécurité des personnes doit s'assimiler à la notion intacte d'un processus allant vers plus d'égalité.",
+            "la volonté farouche de sortir notre pays de la crise nécessite de la majorité des Français qu'ils reconsidèrent le socle d'une perception des prémices de la récession dans laquelle se trouvent distinguées des repères utiles.",
+            "la sécurité des personnes oriente la conscience collective dans la voie d'une société politique n’entendant plus assez l'appel répété des français.",
+            "l'intégration sociale au profit de la vie associative des quartiers a pour effet voulu la pressante exigence d'un temps et d'une époque en phase avec les innovations afin de ne pas être dépassé.",
+            "la montée des dépenses basiques oblige à la prise en compte encore plus effective d'un rassemblement des conditions de base pour construire sa vie et envisager son avenir.",
+            "le reflet de l'idéologie du moment oblige à la prise en compte encore plus effective d'un rassemblement des conditions de base pour construire sa vie et envisager son avenir.",
+            "le processus de concertation au niveau national et local nécessite de la majorité des Français qu'ils reconsidèrent le socle d'un retard en terme de gestion de contenu qui peut être très facilement rattrapé.",
+            "la force et la richesse de la diversité doit conduire à l'ouverture intégrale d'une prospection émérite, et c'est un symbole. Comme disent les Chinois : Qui n'est pas venu sur la grande muraille n'est pas un brave et qui vient sur la grande muraille conquiert la bravitude.",
+            "le développement équitable doit être au centre des débats d'une délégation ayant pour objectif la préoccupation de la totalité des problématiques de bon sens.",
+            "la démocratie participative oriente la conscience collective dans la voie d'une baisse effective du nombre de personne dans la détresse.",
+            "la refonte du pacte républicain atteint la restructuration profonde d'une Europe socialement et économiquement redressée et capable de peser dans un mode multipolaire.",
+            "la conjoncture actuelle connait, par définition, la tentation d'un temps et d'une époque en phase avec les innovations afin de ne pas être dépassé.",
+            "la juste récompense de la promotion sociale connait, par définition, la tentation d'un monde nouveau où chacun ira à son rythme et où nous attendrons ceux qui vont un peu plus lentement sans freiner ceux qui veulent accélérer.",
+            "la situation réelle doit renouveler la responsabilisation protectrice et la dynamique d'un plan correspondant véritablement aux exigences légitimes de chacun.",
+            "la force et la richesse de la diversité doit permettre la libre expression d'une recherche de la meilleure solution possible.",
+            "l'effort prioritaire en faveur du statut précaire des exclus fait ressortir le réel attrait d'un réaménagement dans lequel quiconque pourra en définitive reconquérir sa distinction.",
+            "la montée des dépenses basiques doit réunir les atouts d'un déploiement visionnaire revivifiant.",
+            "la situation réelle doit décider de l'avenir d'au moins deux générations compte tenu de la lourdeur d'un encadrement plus propice à l'instauration d'un climat de confiance."
+        ];
+
+		function clicMonProgramme(obj)
+        {
+
+            var p = $("#monprogramme").position();
+            var isAnimating = $("#monprogramme").is(':animated');
+            if (isAnimating)
+                return;
+
+
+            var top = p.top;
+            var left = p.left;
+
+            var direction = Math.random() > 0.5;
+
+            if (top < 200) top = top + 200;
+            else if (top > $(window).height() - 250) top = top - 200;
+            else if (direction) top = top + 200;
+            else top = top - 200;
+
+            var direction = Math.random() > 0.5;
+
+            if (left < 200) left = left + 200;
+            else if (left > $(window).width() - 400) left = left - 200;
+            else if (direction) left = left + 200;
+            else left = left - 200;
+
+            $("#monprogramme").animate({top:top+'px', left:left+'px'}, 300);
+
+            if (step == 0)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>Minute, je suis pas prêt</span>");
+            else if (step == 1)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>La révolution est en marche</span>");
+            else if (step == 2)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>2 sec, je regarde à droite</span>");
+            else if (step == 3)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>Et aussi à gauche</span>");
+            else if (step == 4)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>Je marche, je marche attends</span>");
+            else if (step == 5)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>T'inquiete pas ça arrive</span>");
+            else if (step == 6)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>J'arrive pas à me décider</span>");
+            else if (step == 7)
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>Aller, je me lance</span>");
+            else
+                $("#monprogramme").html("Mon Programme<br /><span style='font-size:12px;'>"+phrases[step%phrases.length]+"</span>");
+
+            
+            step++
+        }
+	</script>
+</head>
+
+<body>
+
+    <div style="position: absolute;left: 30px;top: 30px;">
+        <div style="width:100px;border: 1px solid #414141;padding: 0 10px;margin-bottom: 5px;">J'adhère</div>
+        <div style="width:100px;background: #404040;color: #fff;border: 1px solid #414141;padding: 0 10px;margin-bottom: 5px;">Je donne</div>
+
+    </div>
+
+    <div style="margin:auto;text-align: center;"><img src="logo.png" style="width: 314px;height: auto;" /></div>
+
+    <div>
+        <ul>
+            <li><a href="https://en-marche.fr/en-marche/">En Marche</a></li>
+            <li><a href="https://en-marche.fr/emmanuel-macron/">Emmanuel Macron</a></li>
+            <li><a href="https://en-marche.fr/ca-nous-fait-marcher/">Actualités</a></li>
+            <li><a href="https://en-marche.fr/construire-majorite-de-projet/">Législatives</a></li>
+            <li><a href="https://en-marche.fr/organisation.html">Organisation</a></li>
+            <li><a href="https://en-marche.fr/participez-a-rassemblement-enmarche/">Rassemblements</a></li>
+        </ul>
+    </div>
+
+    
+    <div id="monprogramme" onmouseover="clicMonProgramme(this);" style="position:absolute;top:330px;left:calc(50% - 130px);width:250px;font-size: 30px;margin:auto;text-align: center;cursor: pointer;">Mon Programme</div>
+
+
+    <div style="margin:auto;margin-top:300px;text-align: center;"><img src="logo_bottom.png" style="width: 50%;height: auto;" /></div>
+
+
+</body>
+</html>
